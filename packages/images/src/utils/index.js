@@ -1,20 +1,6 @@
-import { HTTPError } from './errors.js'
-
-export class JSONResponse extends Response {
-  /**
-   *
-   * @param {unknown} body
-   * @param {ResponseInit} [init]
-   */
-  constructor(body, init = {}) {
-    const headers = {
-      headers: {
-        'content-type': 'application/json;charset=UTF-8',
-      },
-    }
-    super(JSON.stringify(body), { ...init, ...headers })
-  }
-}
+import { HTTPError } from '../response.js'
+import { validateImageURL } from './validate-url.js'
+export * from './validate-url.js'
 
 /**
  * Parse the request URL
@@ -33,34 +19,6 @@ export function parseURL(url) {
     }
   }
   HTTPError.throw(`Request URL is invalid.`, 400)
-}
-
-/**
- * Validate the image URL
- *
- * @param {string} hostname
- */
-function validateImageURL(hostname) {
-  const hostnames = [
-    'localhost',
-    'web3.storage',
-    'web3-storage.pages.dev',
-    'nft.storage',
-    'nft-storage-1at.pages.dev',
-  ]
-  // eslint-disable-next-line no-undef
-  const pattern = new URLPattern({
-    protocol: 'http{s}?',
-    hostname: `{*.}?(${hostnames.join('|')})`,
-    pathname: '*.(jpe?g|png|gif|webp)',
-  })
-
-  const out = pattern.exec(hostname)
-  if (out === null) {
-    return false
-  }
-
-  return out
 }
 
 /**
