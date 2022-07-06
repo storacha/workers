@@ -30,9 +30,23 @@ jobs:
       - run: pnpm install
       - run: pnpm -r --filter @web3-storage/worker-utils run lint
       - run: pnpm -r --filter @web3-storage/worker-utils run test
-  publish:
+  release:
     needs: test
+    runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v3
+        id: release
+        with:
+          path: packages/utils
+          release-type: node
+          monorepo-tags: true
+          package-name: '@web3-storage/worker-utils'
+  publish:
+    needs: release
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master' && needs.release.outputs.releases_created
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
