@@ -1,5 +1,5 @@
-import { HTTPError } from './errors.js'
-import { parseOptions, parseURL, processImageURL } from './utils.js'
+import { HTTPError } from './response.js'
+import { parseOptions, parseURL, processImageURL } from './utils/index.js'
 
 /**
  * @param {Request} request
