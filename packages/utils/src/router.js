@@ -1,6 +1,6 @@
 /**
  * @typedef {(req: ParsedRequest, rsp: Response) => Response} ResponseHandler
- * @typedef {(req: Request) => Response} NotFoundHandler
+ * @typedef {(req: Request) => Response | Promise<Response>} NotFoundHandler
  * @typedef {'get'|'post'|'put'|'delete'|'options'|'patch'|'connect'|'trace'|'head'} HTTPMethod
  * @typedef {Request & {
  * query: Record<string,string>,

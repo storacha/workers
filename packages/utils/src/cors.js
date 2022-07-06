@@ -1,5 +1,3 @@
-import { Response } from '@web-std/fetch'
-
 /**
  * @param {Request} req
  * @param {Response} rsp
