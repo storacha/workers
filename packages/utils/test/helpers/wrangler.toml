@@ -1,0 +1,7 @@
+name = "router-testing"
+workers_dev = true
+compatibility_date = "2022-06-01"
+compatibility_flags = ["url_standard"]
+
+[build]
+command = "./cli.js build"
