@@ -14,7 +14,9 @@
   "exports": {
     ".": "./src/index.js",
     "./cors": "./src/cors.js",
-    "./router": "./src/router.js"
+    "./router": "./src/router.js",
+    "./error": "./src/error.js",
+    "./response": "./src/response.js"
   },
   "typesVersions": {
     "*": {
