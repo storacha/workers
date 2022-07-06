@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.0.3-dev...worker-utils-v0.0.4-dev) (2022-07-06)
+
+
+### Features
+
+* **utils:** error and response ([4827a96](https://github.com/web3-storage/workers/commit/4827a96d3a09e94223a6359b811b41e4723ac4e9))
+
 ## [0.0.3-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.0.2-dev...worker-utils-v0.0.3-dev) (2022-07-06)
 
 
