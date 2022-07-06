@@ -25,7 +25,7 @@ jobs:
           version: 7.0.x
       - uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm -r --filter @web3-storage/worker-utils run lint
@@ -55,7 +55,7 @@ jobs:
           version: 7.0.x
       - uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 18
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm -r --filter @web3-storage/worker-utils exec tsc
