@@ -1,6 +1,6 @@
 {
   "name": "@web3-storage/worker-utils",
-  "version": "0.0.1-dev",
+  "version": "0.0.2-dev",
   "description": "Cloudflare Workers Utils",
   "author": "Hugo Dias <hugomrdias@gmail.com> (hugodias.me)",
   "license": "(Apache-2.0 OR MIT)",
