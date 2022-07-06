@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.3-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.0.2-dev...worker-utils-v0.0.3-dev) (2022-07-06)
+
+
+### Bug Fixes
+
+* **utils:** docs ([ec094d8](https://github.com/web3-storage/workers/commit/ec094d87a5c7f2d87f875156dbf150602a7a948c))
+
 ## 0.0.2-dev (2022-07-06)
 
 
