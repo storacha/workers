@@ -29,7 +29,7 @@
     "dist/src/*.d.ts.map"
   ],
   "scripts": {
-    "lint": "tsc && eslint '**/*.{js,ts}' && prettier --check '**/*.{js,ts,md,yml,json}' --ignore-path ../../.gitignore",
+    "lint": "tsc && eslint '**/*.{js,ts}' && prettier --check '**/*.{js,ts,yml,json}' --ignore-path ../../.gitignore",
     "test": "tsc && ava"
   },
   "dependencies": {
