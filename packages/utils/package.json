@@ -16,7 +16,8 @@
     "./cors": "./src/cors.js",
     "./router": "./src/router.js",
     "./error": "./src/error.js",
-    "./response": "./src/response.js"
+    "./response": "./src/response.js",
+    "./logging": "./src/logging.js"
   },
   "typesVersions": {
     "*": {
@@ -35,7 +36,9 @@
     "test": "tsc && ava"
   },
   "dependencies": {
-    "@web-std/fetch": "^4.1.0"
+    "@web-std/fetch": "^4.1.0",
+    "nanoid": "^4.0.0",
+    "toucan-js": "^2.6.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.14.0",
