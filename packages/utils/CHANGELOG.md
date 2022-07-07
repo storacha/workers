@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.0.4-dev...worker-utils-v0.1.0-dev) (2022-07-07)
+
+
+### Features
+
+* add cause support to error ([3860c4f](https://github.com/web3-storage/workers/commit/3860c4f897cd3f57938cd0197b5dc5278acabbcd))
+
+
+### Bug Fixes
+
+* tweak the tests ([d3a455a](https://github.com/web3-storage/workers/commit/d3a455adea0bac6a157a579c1d02a78c9cc20b9f))
+
 ## [0.0.4-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.0.3-dev...worker-utils-v0.0.4-dev) (2022-07-06)
 
 
