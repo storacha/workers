@@ -1,9 +1,17 @@
+import anyTest from 'ava'
+import { build } from 'esbuild'
 import { Miniflare } from 'miniflare'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { build } from 'esbuild'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+/**
+ * @typedef {import("ava").TestFn<{mf: Miniflare}>} TestFn
+ */
+
+// eslint-disable-next-line unicorn/prefer-export-from
+export const test = /** @type {TestFn} */ (anyTest)
 
 /**
  * @param {string} filename
