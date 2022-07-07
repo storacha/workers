@@ -19,16 +19,18 @@ export const test = /** @type {TestFn} */ (anyTest)
  */
 export async function run(filename, modules = false) {
   const filePath = path.join(__dirname, filename)
+  const outPath = path.join(__dirname, 'dist', filename)
+
   await build({
     entryPoints: [filePath],
     bundle: true,
-    outfile: path.join(__dirname, 'dist', filename),
+    outfile: outPath,
     sourcemap: true,
     format: modules ? 'esm' : 'iife',
   })
 
   return new Miniflare({
-    scriptPath: path.join(__dirname, 'dist', filename),
+    scriptPath: outPath,
     buildCommand: undefined,
     packagePath: false,
     wranglerConfigPath: false,

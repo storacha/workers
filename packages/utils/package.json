@@ -70,6 +70,8 @@
     "nodeArguments": [
       "--experimental-vm-modules"
     ],
-    "concurrency": 1
+    "concurrency": 1,
+    "utilizeParallelBuilds": false,
+    "workerThreads": false
   }
 }
