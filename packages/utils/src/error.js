@@ -10,7 +10,7 @@ export function errorHandler(err, log = console) {
     error: {
       code: err.code || 'HTTP_ERROR',
       message: err.message || 'Server Error',
-      cause: err.cause,
+      cause: err.cause?.message,
     },
   }
   if (status >= 500) {
@@ -47,7 +47,7 @@ export class HTTPError extends Error {
       error: {
         code: err.code || 'HTTP_ERROR',
         message: err.message || 'Internal Server Error.',
-        cause: err.cause,
+        cause: err.cause?.message,
       },
     }
     return new Response(JSON.stringify(body), {
