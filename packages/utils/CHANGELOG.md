@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.1.1-dev...worker-utils-v0.2.0-dev) (2022-07-07)
+
+
+### Features
+
+* logging ([597ff83](https://github.com/web3-storage/workers/commit/597ff839ec3eabc4178f63a0cdbc516c00c5515e))
+
 ## [0.1.1-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.1.0-dev...worker-utils-v0.1.1-dev) (2022-07-07)
 
 
