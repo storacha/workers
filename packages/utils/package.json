@@ -17,7 +17,8 @@
     "./router": "./src/router.js",
     "./error": "./src/error.js",
     "./response": "./src/response.js",
-    "./logging": "./src/logging.js"
+    "./logging": "./src/logging.js",
+    "./loki": "./src/loki.js"
   },
   "typesVersions": {
     "*": {
