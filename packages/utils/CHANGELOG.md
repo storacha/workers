@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.2.0-dev...worker-utils-v0.3.0-dev) (2022-07-26)
+
+
+### Features
+
+* add loki util ([#10](https://github.com/web3-storage/workers/issues/10)) ([5ec6887](https://github.com/web3-storage/workers/commit/5ec68870b317ec820699b92d4afe45ddf7aa839a))
+
 ## [0.2.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.1.1-dev...worker-utils-v0.2.0-dev) (2022-07-07)
 
 
