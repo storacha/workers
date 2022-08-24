@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.3.0-dev...worker-utils-v0.4.0-dev) (2022-08-24)
+
+
+### Features
+
+* **utils:** add timers to logging ([#12](https://github.com/web3-storage/workers/issues/12)) ([ed607dc](https://github.com/web3-storage/workers/commit/ed607dcd3b69b9e277ee773e56a15f0b579788f8))
+
 ## [0.3.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.2.0-dev...worker-utils-v0.3.0-dev) (2022-07-26)
 
 
