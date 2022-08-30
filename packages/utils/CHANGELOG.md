@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.4.0-dev...worker-utils-v0.4.1-dev) (2022-08-30)
+
+
+### Bug Fixes
+
+* **utils:** fix types in tests ([2297ec1](https://github.com/web3-storage/workers/commit/2297ec1e05dde0c1605580fa3f5a0e130b4c5bc0))
+
 ## [0.4.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.3.0-dev...worker-utils-v0.4.0-dev) (2022-08-24)
 
 
