@@ -13,8 +13,10 @@ const buildMetadataFromHeaders = (/** @type {Headers} */ headers) => {
 }
 
 /**
+ * @typedef {'test' | 'dev' | 'staging' | 'production'} Env
  * @typedef {'log' | 'debug' | 'info' | 'warn' | 'error' | 'time'} Level
  * @typedef {{
+ * env: Env,
  * dt: string;
  * level: Level;
  * context?: any;
@@ -37,6 +39,7 @@ export class Logging {
    * @param {string} opts.version
    * @param {string} opts.commit
    * @param {string} opts.branch
+   * @param {Env} opts.env
    * @param {import('toucan-js').default} [opts.sentry]
    */
   constructor(request, context, opts) {
@@ -176,6 +179,7 @@ export class Logging {
       const duration = Date.now() - this.startTs
       /** @type {LogEntry} */
       const log = {
+        env: this.opts.env,
         message: '',
         dt,
         level: 'info',
@@ -290,6 +294,8 @@ export class Logging {
   }
 
   /**
+   * Ends the timer
+   *
    * @param {string} name
    * @param {boolean} [shouldLog]
    * @param {any} [context]
@@ -314,6 +320,7 @@ export class Logging {
 
     if (shouldLog) {
       this._add({
+        env: this.opts.env,
         dt: this._date(),
         level: 'time',
         message: name,

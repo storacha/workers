@@ -1,6 +1,6 @@
 /**
  *
- * @param {Error & { status?: number; code?: string }} err
+ * @param {Error & { status?: number; code?: string  }} err
  * @param {{ error : (err: Error) => void}} [log]
  */
 export function errorHandler(err, log = console) {
@@ -10,7 +10,7 @@ export function errorHandler(err, log = console) {
     error: {
       code: err.code || 'HTTP_ERROR',
       message: err.message || 'Server Error',
-      cause: err.cause?.message,
+      cause: err.cause,
     },
   }
   if (status >= 500) {
@@ -29,12 +29,12 @@ export class HTTPError extends Error {
   /**
    *
    * @param {string} [message]
-   * @param {ErrorOptions & { status: number }} [options]
+   * @param {ErrorOptions & { status?: number }} [options]
    */
-  constructor(message = 'Internal Server Error.', { status = 500, cause }) {
-    super(message, cause)
+  constructor(message = 'Internal Server Error.', options) {
+    super(message, options)
     this.code = 'HTTP_ERROR'
-    this.status = status
+    this.status = options?.status || 500
   }
 
   /**
@@ -47,7 +47,7 @@ export class HTTPError extends Error {
       error: {
         code: err.code || 'HTTP_ERROR',
         message: err.message || 'Internal Server Error.',
-        cause: err.cause?.message,
+        cause: err.cause,
       },
     }
     return new Response(JSON.stringify(body), {
