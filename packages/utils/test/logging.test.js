@@ -6,7 +6,7 @@ function logging() {
   return new Logging(
     new Request('http://localhost'),
     { waitUntil: async () => {}, passThroughOnException: () => {} },
-    { branch: 'test', commit: 'test', version: 'test' }
+    { branch: 'test', commit: 'test', version: 'test', env: 'test' }
   )
 }
 
