@@ -11,7 +11,7 @@ export function errorHandler(err, log = console) {
       code: err.code || 'HTTP_ERROR',
       message: err.message || 'Server Error',
       // @ts-ignore
-      cause: err.cause.message ? err.cause.message : err.cause,
+      cause: err.cause ? err.cause.toString() : undefined,
     },
   }
   if (status >= 500) {
