@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.2-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.4.1-dev...worker-utils-v0.4.2-dev) (2022-09-01)
+
+
+### Bug Fixes
+
+* error cause been undefined ([6119b80](https://github.com/web3-storage/workers/commit/6119b801c8a8b3da8d473ad8da79b0e0d0cc6e17))
+* error cause serialization ([d07750f](https://github.com/web3-storage/workers/commit/d07750f3f76a728d4a1be17455c6262ffd7d1724))
+
 ## [0.4.1-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.4.0-dev...worker-utils-v0.4.1-dev) (2022-08-30)
 
 
