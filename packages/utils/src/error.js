@@ -11,7 +11,12 @@ export function errorHandler(err, log = console) {
       code: err.code || 'HTTP_ERROR',
       message: err.message || 'Server Error',
       // @ts-ignore
-      cause: err.cause ? err.cause.toString() : undefined,
+      // eslint-disable-next-line no-nested-ternary
+      cause: err.cause
+        ? err.cause instanceof Error
+          ? err.cause.toString()
+          : err.cause
+        : undefined,
     },
   }
   if (status >= 500) {
