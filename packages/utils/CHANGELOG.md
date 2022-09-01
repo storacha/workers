@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.4.2-dev...worker-utils-v0.4.3-dev) (2022-09-01)
+
+
+### Bug Fixes
+
+* improve error serialization ([29453d7](https://github.com/web3-storage/workers/commit/29453d7a53b650d436b3cb36a07cde3cc3c724dd))
+
 ## [0.4.2-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.4.1-dev...worker-utils-v0.4.2-dev) (2022-09-01)
 
 
