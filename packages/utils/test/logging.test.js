@@ -19,6 +19,16 @@ test('should add a log to the batch ', async (t) => {
   t.is(log.logEventsBatch[0].message, 'testing')
 })
 
+test('should always get distinctly ordered times', async (t) => {
+  const log = logging()
+
+  log.log('testing1')
+  log.log('testing2')
+
+  t.is(log.logEventsBatch.length, 2)
+  t.assert(log.logEventsBatch[1].dt > log.logEventsBatch[0].dt)
+})
+
 test('should not log with time', async (t) => {
   const log = logging()
 
