@@ -10,7 +10,7 @@ function logging() {
   )
 }
 
-test('should add a log to the batch ', async (t) => {
+test('should add a log to the batch', async (t) => {
   const log = logging()
 
   log.log('testing')
