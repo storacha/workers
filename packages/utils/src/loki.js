@@ -41,7 +41,7 @@ export class Logging {
    * @param {string} opts.branch
    * @param {string} opts.worker
    * @param {string} opts.env
-   * @param {import('toucan-js').default} [opts.sentry]
+   * @param {import('toucan-js').Toucan} [opts.sentry]
    */
   constructor(request, context, opts) {
     this.request = request
