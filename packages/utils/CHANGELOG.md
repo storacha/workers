@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.4.3-dev...worker-utils-v0.5.0-dev) (2023-04-05)
+
+
+### Features
+
+* packages/utils upgrade to toucan-js@3.x ([#21](https://github.com/web3-storage/workers/issues/21)) ([e7a1b2a](https://github.com/web3-storage/workers/commit/e7a1b2a9108f6f6a455db438d9001c31ff3e8681))
+
 ## [0.4.3-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.4.2-dev...worker-utils-v0.4.3-dev) (2022-09-01)
 
 
