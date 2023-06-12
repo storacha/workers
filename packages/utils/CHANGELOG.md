@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.5.0-dev...worker-utils-v0.5.1-dev) (2023-06-12)
+
+
+### Bug Fixes
+
+* do not discard headers in JSON response ([#24](https://github.com/web3-storage/workers/issues/24)) ([c9769c2](https://github.com/web3-storage/workers/commit/c9769c2c7caf7173b6b73b594436360bced58130))
+
 ## [0.5.0-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.4.3-dev...worker-utils-v0.5.0-dev) (2023-04-05)
 
 
