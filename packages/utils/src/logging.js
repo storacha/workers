@@ -111,20 +111,17 @@ export class Logging {
    */
   _date() {
     const now = Date.now()
-    if (now === this.currentTs) {
-      const dt = new Date().toISOString()
+    if (now > this.currentTs) {
+      this.currentTs = now
+    } else {
+      // currentTs equal or already ahead
       /**
        * Fake increment the datetime string to order the logs entries
-       * It won't leap seconds but for most cases it will increment by 1 the datetime milliseconds
+       * Unless very busy should usually be only +1ms of the actual datetime
        */
-      const newDt = dt.replace(/\.(\d*)Z/, (s, p1, p2) => {
-        return `.${String(Number(p1) + this.logEventsBatch.length)}Z`
-      })
-      return new Date(newDt).toISOString()
-    } else {
-      this.currentTs = now
-      return new Date().toISOString()
+      this.currentTs += 1
     }
+    return new Date(this.currentTs).toISOString()
   }
 
   /**

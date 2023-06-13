@@ -10,13 +10,23 @@ function logging() {
   )
 }
 
-test('should add a log to the batch ', async (t) => {
+test('should add a log to the batch', async (t) => {
   const log = logging()
 
   log.log('testing')
 
   t.is(log.logEventsBatch[0].level, 'log')
   t.is(log.logEventsBatch[0].message, 'testing')
+})
+
+test('should always get distinctly ordered times', async (t) => {
+  const log = logging()
+
+  log.log('testing1')
+  log.log('testing2')
+
+  t.is(log.logEventsBatch.length, 2)
+  t.assert(log.logEventsBatch[1].dt > log.logEventsBatch[0].dt)
 })
 
 test('should not log with time', async (t) => {
