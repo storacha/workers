@@ -36,7 +36,7 @@ import { nanoid } from 'nanoid/non-secure'
  * @property {string} level
  * @property {Metadata} metadata
  *
- * @typedef {(log: Log) => object} FilterFieldsCallback
+ * @typedef {(log: Log) => object} LogDataTransformerCallback
  */
 
 export class Logging {
@@ -53,13 +53,13 @@ export class Logging {
    * @param {string} opts.worker
    * @param {string} opts.env
    * @param {import('toucan-js').Toucan} [opts.sentry]
-   * @param {FilterFieldsCallback} [opts.filterFields] - Callback to filter log fields
+   * @param {LogDataTransformerCallback} [opts.logDataTransformer] - Callback to filter or transform log fields
    */
   constructor(request, context, opts) {
     this.request = request
     this.context = context
     this.opts = opts
-    this.filterFields = opts.filterFields
+    this.logDataTransformer = opts.logDataTransformer
 
     this._times = new Map()
     /**
@@ -241,12 +241,12 @@ export class Logging {
   }
 
   /**
-   * Add log entry to batch after applying field filtering
+   * Add log entry to batch after applying logDataTransformer
    *
    * @param {any} body
    */
   _add(body) {
-    const log = this.filterFields ? this.filterFields(body) : body
+    const log = this.logDataTransformer ? this.logDataTransformer(body) : body
     this.logEventsBatch.push(log)
   }
 

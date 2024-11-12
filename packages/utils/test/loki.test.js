@@ -28,7 +28,7 @@ function loggingWithFilteredFields() {
       commit: 'test',
       version: 'test',
       env: 'test',
-      filterFields: (log) => {
+      logDataTransformer: (log) => {
         const { metadata } = log
         // Customize which fields to include
         const filteredMetadata = {
@@ -68,7 +68,7 @@ test('should not log with timeend', async (t) => {
   const log = logging()
 
   log.time('testing')
-  await sleep(2000)
+  await sleep(100) // Ensure start time differs from end time
   log.timeEnd('testing')
 
   t.is(log.logEventsBatch.length, 0)
