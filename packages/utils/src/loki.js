@@ -19,13 +19,24 @@ import { nanoid } from 'nanoid/non-secure'
  * @property {string} worker_id
  * @property {number} worker_started
  *
+ * @typedef {object} MetadataResponse
+ * @property {Record<string, string>} headers
+ * @property {number} status_code
+ * @property {number} duration
+ *
  * @typedef {object} Metadata
- * @property {string} [message]
- * @property {string} [dt]
- * @property {string} [level]
  * @property {User} [user]
  * @property {MetadataRequest} request
  * @property {CloudflareWorker} cloudflare_worker
+ * @property {MetadataResponse} [response]
+ *
+ * @typedef {object} Log
+ * @property {string} message
+ * @property {string} dt
+ * @property {string} level
+ * @property {Metadata} metadata
+ *
+ * @typedef {(log: Log) => object} LogDataTransformerCallback
  */
 
 export class Logging {
@@ -42,11 +53,13 @@ export class Logging {
    * @param {string} opts.worker
    * @param {string} opts.env
    * @param {import('toucan-js').Toucan} [opts.sentry]
+   * @param {LogDataTransformerCallback} [opts.logDataTransformer] - Callback to filter or transform log fields
    */
   constructor(request, context, opts) {
     this.request = request
     this.context = context
     this.opts = opts
+    this.logDataTransformer = opts.logDataTransformer
 
     this._times = new Map()
     /**
@@ -55,7 +68,7 @@ export class Logging {
     this._timesOrder = []
 
     /**
-     * @type {any[]}
+     * @type {Log[]}
      */
     this.logEventsBatch = []
     this.startTs = Date.now()
@@ -158,6 +171,9 @@ export class Logging {
     const run = async () => {
       const dt = this._date()
       const duration = Date.now() - this.startTs
+      /**
+       * @type {Log}
+       */
       const log = {
         message: '',
         dt,
@@ -225,12 +241,13 @@ export class Logging {
   }
 
   /**
-   * Add log entry to batch
+   * Add log entry to batch after applying logDataTransformer
    *
    * @param {any} body
    */
   _add(body) {
-    this.logEventsBatch.push(body)
+    const log = this.logDataTransformer ? this.logDataTransformer(body) : body
+    this.logEventsBatch.push(log)
   }
 
   /**
