@@ -1,6 +1,5 @@
 {
   "release-type": "node",
-  "separate-pull-requests": true,
   "include-component-in-tag": true,
   "packages": {
     "packages/utils": {
