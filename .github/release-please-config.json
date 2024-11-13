@@ -1,0 +1,9 @@
+{
+  "release-type": "node",
+  "include-component-in-tag": true,
+  "packages": {
+    "packages/utils": {
+      "package-name": "@web3-storage/worker-utils"
+    }
+  }
+}
