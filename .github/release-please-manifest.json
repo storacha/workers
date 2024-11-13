@@ -1,3 +1,4 @@
 {
-  "@web3-storage/worker-utils": "0.5.1-dev"
+  "@web3-storage/worker-utils": "0.5.1-dev",
+  "packages/utils": "0.0.4-dev"
 }
