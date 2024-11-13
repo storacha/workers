@@ -1,0 +1,10 @@
+{
+  "release-type": "node",
+  "separate-pull-requests": true,
+  "include-component-in-tag": true,
+  "packages": {
+    "packages/utils": {
+      "package-name": "@web3-storage/worker-utils"
+    }
+  }
+}

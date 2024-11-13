@@ -19,11 +19,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
           version: 7.0.x
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'pnpm'
@@ -34,26 +34,27 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    permissions:
+      contents: write
+      pull-requests: write
     outputs:
       releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v3
+      - uses: googleapis/release-please-action@v4
         id: release
         with:
-          path: packages/utils
-          release-type: node
-          monorepo-tags: true
-          package-name: '@web3-storage/worker-utils'
+          config-file: .github/release-please-config.json
+          manifest-file: .github/release-please-manifest.json
   publish:
     needs: release
     if: github.event_name == 'push' && github.ref == 'refs/heads/master' && needs.release.outputs.releases_created
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
           version: 7.0.x
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
