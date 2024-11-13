@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0-dev (2024-11-13)
+
+
+### Features
+
+* Add field filtering to Loki logs ([#26](https://github.com/storacha/workers/issues/26)) ([fbf9063](https://github.com/storacha/workers/commit/fbf9063d8e9c89507721783c1cbc1929f0d0fb88))
+
 ## [0.5.1-dev](https://github.com/web3-storage/workers/compare/worker-utils-v0.5.0-dev...worker-utils-v0.5.1-dev) (2023-06-12)
 
 
